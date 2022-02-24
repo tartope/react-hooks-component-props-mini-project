@@ -1,11 +1,13 @@
 import React from "react";
 
-function Article(){
+function Article({article}){
+    const {title, date, preview, minutes } = article
+    console.log(title)
     return(
         <article>
-            <h3></h3>
-            <small></small>
-            <p></p>
+            <h3>{title}</h3>
+            <small>{date}</small>
+            <p>{preview}</p>
         </article>
     )
 }

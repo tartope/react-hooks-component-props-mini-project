@@ -4,12 +4,12 @@ import Article from "./Article";
 function ArticleList(props){
 
     const articleElements = props.articles.map((article) =>{
-        return <p key={ article.id }>{ article }</p>
+        return <Article key={ article.id } article={ article } />
     })
-
+    console.log(articleElements)
     return(
         <main>
-            <Article />
+            
             { articleElements }
         </main>
         
