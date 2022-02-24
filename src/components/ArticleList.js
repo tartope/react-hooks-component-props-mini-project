@@ -1,15 +1,20 @@
 import React from "react";
 import Article from "./Article";
 
-function ArticleList(props){
+function ArticleList({ articles }){
 
-    const articleElements = props.articles.map((article) =>{
-        return <Article key={ article.id } article={ article } />
+    const articleElements = articles.map((article) =>{
+        return <Article 
+        key={ article.id } 
+        title={ article.title }
+        date={ article.date}
+        preview={article.preview}
+        minutes={article.minutes}
+        />
     })
-    console.log(articleElements)
+    // console.log(articleElements)
     return(
         <main>
-            
             { articleElements }
         </main>
         
@@ -21,5 +26,4 @@ function ArticleList(props){
 export default ArticleList;
 
 
-// an array of Article components (one component for each post passed down as a prop to ArticleList)
-// make sure to assign a unique key prop to each Article
+//line 6: use map to iterate through each article and return an Article (child) component (pass props using attribute naming style to Article child component).  place articleElements in return of main.
